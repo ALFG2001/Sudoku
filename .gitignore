@@ -1,2 +1,4 @@
 /Sudoku.code-workspace
 /__pycache__
+*.json
+*.xlsx
