@@ -5,8 +5,16 @@ import os
 import glob
 from MakeBigExcel import *
 
-# Function to process Sudoku data from a JSON file and create Excel files for each difficulty level
-def process_sudoku_puzzles(json_filename):
+def process_sudoku_puzzles(json_filename: str) -> list[str]:
+    """
+    Process Sudoku puzzles from a JSON file and generate Excel files categorized by difficulty.
+    
+    Args:
+    - json_filename (str): The name of the JSON file containing Sudoku data.
+    
+    Returns:
+    - list[str]: A list of created Excel filenames for each difficulty level.
+    """
     # Load JSON data from the file
     with open(json_filename, "r") as file:
         data = json.load(file)
@@ -67,7 +75,11 @@ def process_sudoku_puzzles(json_filename):
     return created_files  # Return the list of created files
 
 
-def MakeExcel():
+def MakeExcel() -> None:
+    """
+    Process all Sudoku JSON files in the current directory to create categorized Excel files 
+    and merge them by difficulty level.
+    """
     # Iterate over all JSON files in the current directory
     json_files = glob.glob("*.json")
     all_created_files = []  # List to store all created files
