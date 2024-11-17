@@ -112,7 +112,7 @@ def generate_random_grids(solved_grid: list[list], unsolved_grid: list[list]) ->
     - tuple: A pair of randomized solved and unsolved grids.
     """
     # Create a random letter-to-number mapping
-    unique_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+    unique_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
     mapping = dict(zip(random.sample(unique_letters, 9), range(1, 10)))
     mapping["0"] = 0  # Keep 0 as is
 
