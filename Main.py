@@ -1,7 +1,7 @@
-from CreaJson import CreaJson
+from MakeJson import MakeJson
 from MakeSingleExcel import MakeExcel
-from MettiLettere import FromNumberToLetter
-from GestioneInput import get_sudoku_input, get_amount, get_difficulty
+from NumberToLetter import FromNumberToLetter
+from InputFunctions import get_sudoku_input, get_amount, get_difficulty
 
 def print_header():
     print("=" * 50)
@@ -24,7 +24,7 @@ def main():
         unsolved, solved = FromNumberToLetter(sudoku_grids)
         
         # Generate the JSON for the Sudoku grids
-        CreaJson(solved, unsolved, get_amount(), get_difficulty())
+        MakeJson(solved, unsolved, get_amount(), get_difficulty())
 
         # Ask the user if they want to generate more puzzles or make the Excel file
         print_menu()

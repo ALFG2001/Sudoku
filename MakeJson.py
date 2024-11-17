@@ -3,7 +3,7 @@ import numpy as np
 import json
 import os
 
-def permute_letters(grid, mapping):
+def permute_letters(grid, mapping:dict):
     """Apply a given letter-to-number mapping to the grid, keeping 0 as is."""
     return [[mapping.get(cell, 0) for cell in row] for row in grid]
 
@@ -44,9 +44,8 @@ def swap_column_bands(grid, order):
 def generate_random_grids(solved_grid, unsolved_grid):
     """Generate a single pair of randomized grids."""
     # Step 1: Create a random letter-to-number mapping
-    letters = [c for row in solved_grid for c in row if c != "0"]
-    unique_letters = set(letters)
-    mapping = {letter: i + 1 for i, letter in enumerate(random.sample(unique_letters, len(unique_letters)))}
+    unique_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+    mapping = dict(zip(random.sample(unique_letters, 9), range(1,10)))
     mapping["0"] = 0  # Keep 0 as is
 
     # Step 2: Apply the mapping to both grids
@@ -88,7 +87,7 @@ def generate_matching_grids(solved_grid, unsolved_grid, n=100):
         unsolved_grids.append(unsolved)
     return solved_grids, unsolved_grids
 
-def CreaJson(solved_grid, unsolved_grid, N, difficulty):
+def MakeJson(solved_grid, unsolved_grid, N, difficulty):
     # Generate and print 1 matching grid
     solved_grids, unsolved_grids = generate_matching_grids(solved_grid, unsolved_grid, N)
 
