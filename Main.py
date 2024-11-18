@@ -29,7 +29,7 @@ def main():
         # Ask the user if they want to generate more puzzles or make the Excel file
         print_menu()
         
-        user_choice = input("\nPlease enter your choice (1, or 2): ").strip()
+        user_choice = input("\nPlease enter your choice (1 or 2): ").strip()
 
         if user_choice == '1':
             print("\nGenerating new Sudoku puzzles...\n")
@@ -41,7 +41,7 @@ def main():
             print("\nExcel file generated successfully.\n")
             break  # Exit the loop after generating the Excel file
         else:
-            print("\nInvalid input. Please enter 1, or 2.\n")
+            print("\nInvalid input. Please enter 1 or 2.\n")
 
 # Run the main program
 main()
